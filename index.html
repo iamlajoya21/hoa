@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Meadows HOA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            @apply px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-lg transition-colors;
+        }
+        .nav-link.active {
+            @apply bg-blue-600 text-white hover:bg-blue-700;
+        }
+        .announcement-card {
+            @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1;
+        }
+        .report-container {
+            @apply bg-white p-6 rounded-xl shadow-md;
+        }
+        .footer-link {
+            @apply text-gray-400 hover:text-white transition-colors;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-blue-600">Sunrise Meadows HOA</a>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#home" class="nav-link active" onclick="showPage('home')">Home</a>
+                <a href="#reports" class="nav-link" onclick="showPage('reports')">Reports & Finances</a>
+                <a href="#community" class="nav-link" onclick="showPage('community')">Community Hub</a>
+                <a href="#about" class="nav-link" onclick="showPage('about')">About Us</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#home" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="showPage('home')">Home</a>
+            <a href="#reports" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="showPage('reports')">Reports & Finances</a>
+            <a href="#community" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="showPage('community')">Community Hub</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="showPage('about')">About Us</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Home Page -->
+        <section id="home" class="page">
+            <!-- Hero Section -->
+            <div class="bg-blue-600 text-white rounded-xl p-12 text-center mb-12 shadow-lg">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Sunrise Meadows</h1>
+                <p class="text-lg md:text-xl text-blue-100">Your central hub for all community information and updates.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fas fa-file-invoice-dollar text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Pay Dues</h3>
+                    <p class="text-gray-600">Quickly and securely pay your monthly HOA dues online.</p>
+                    <a href="#" class="text-blue-600 font-semibold mt-4 inline-block">Pay Now &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fas fa-calendar-alt text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Community Events</h3>
+                    <p class="text-gray-600">Check out the calendar for upcoming events and meetings.</p>
+                    <a href="#community" onclick="showPage('community')" class="text-blue-600 font-semibold mt-4 inline-block">View Calendar &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fas fa-tools text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Maintenance Request</h3>
+                    <p class="text-gray-600">Submit a request for maintenance in common areas.</p>
+                    <a href="#community" onclick="showPage('community')" class="text-blue-600 font-semibold mt-4 inline-block">Submit Request &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Announcements -->
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Announcements</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="announcement-card">
+                    <p class="text-sm text-gray-500 mb-2">August 26, 2025</p>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Annual Community BBQ</h3>
+                    <p class="text-gray-600">Join us for our annual BBQ on September 15th at the community park! Food, games, and fun for the whole family. Please RSVP by September 10th.</p>
+                </div>
+                <div class="announcement-card">
+                    <p class="text-sm text-gray-500 mb-2">August 20, 2025</p>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Pool Maintenance</h3>
+                    <p class="text-gray-600">The community pool will be closed for scheduled maintenance from August 28th to August 30th. We apologize for any inconvenience.</p>
+                </div>
+                <div class="announcement-card">
+                    <p class="text-sm text-gray-500 mb-2">August 15, 2025</p>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Board Meeting Reminder</h3>
+                    <p class="text-gray-600">The next HOA board meeting is scheduled for September 5th at 7:00 PM in the clubhouse. All residents are welcome to attend.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports & Finances Page -->
+        <section id="reports" class="page hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Reports & Financials</h2>
+            
+            <!-- Financial Reports -->
+            <div class="report-container mb-12">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Financial Reports</h3>
+                <p class="text-gray-600 mb-6">Access the latest budget, income statements, and balance sheets. To view the reports, you may need to be logged into your Google account.</p>
+                <!-- Embed Google Sheet for Financials -->
+                <div class="aspect-w-16 aspect-h-9">
+                     <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpY_AZ_gEBAu-b8-4g-pW-p-s-q-q-q/pubhtml?widget=true&amp;headers=false" class="w-full h-[500px] rounded-lg border"></iframe>
+                </div>
+            </div>
+
+            <!-- Meeting Minutes -->
+            <div class="report-container mb-12">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Meeting Minutes</h3>
+                <p class="text-gray-600 mb-6">Review the minutes from past HOA board meetings.</p>
+                <!-- Embed Google Sheet for Meeting Minutes -->
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_gEBAu-b8-4g-pW-p-s-q-q-q-q-q-q/pubhtml?widget=true&amp;headers=false" class="w-full h-[500px] rounded-lg border"></iframe>
+                </div>
+            </div>
+
+            <!-- Maintenance Logs & Graphs -->
+            <div class="report-container">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Maintenance & Community Stats</h3>
+                <p class="text-gray-600 mb-6">View maintenance logs and community statistics visualized in graphs.</p>
+                <!-- Embed Google Sheet Chart -->
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_gEBAu-b8-4g-pW-p-s-q-q-q-q-q-q-q/pubchart?oid=123456789&amp;format=interactive" class="w-full h-[500px] rounded-lg border"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Hub Page -->
+        <section id="community" class="page hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Community Hub</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Contact the Board</h3>
+                    <p class="text-gray-600 mb-6">Have a question, concern, or suggestion? Send us a message.</p>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">Send Message</button>
+                    </form>
+                </div>
+                <!-- Resident Directory -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Resident Directory</h3>
+                    <p class="text-gray-600 mb-6">A directory of residents who have opted-in to share their contact information. (This is a sample list).</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold">John Doe</p>
+                                <p class="text-sm text-gray-500">123 Maple Street</p>
+                            </div>
+                            <a href="tel:555-123-4567" class="text-blue-600"><i class="fas fa-phone-alt"></i></a>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold">Jane Smith</p>
+                                <p class="text-sm text-gray-500">456 Oak Avenue</p>
+                            </div>
+                            <a href="tel:555-987-6543" class="text-blue-600"><i class="fas fa-phone-alt"></i></a>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold">Robert Johnson</p>
+                                <p class="text-sm text-gray-500">789 Pine Lane</p>
+                            </div>
+                            <a href="tel:555-555-1212" class="text-blue-600"><i class="fas fa-phone-alt"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Page -->
+        <section id="about" class="page hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">About the HOA</h2>
+            <div class="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Our Mission</h3>
+                <p class="text-gray-600 mb-6">Our mission is to maintain and enhance the quality of life in our community by managing common areas, enforcing covenants, and providing services for the benefit of all residents.</p>
+                
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Board Members</h3>
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-2"></div>
+                        <p class="font-bold">Alice Williams</p>
+                        <p class="text-sm text-gray-500">President</p>
+                    </div>
+                     <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-2"></div>
+                        <p class="font-bold">Bob Brown</p>
+                        <p class="text-sm text-gray-500">Vice President</p>
+                    </div>
+                     <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-2"></div>
+                        <p class="font-bold">Charlie Davis</p>
+                        <p class="text-sm text-gray-500">Treasurer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-lg font-semibold">Sunrise Meadows HOA</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="footer-link">Facebook</a>
+                    <a href="#" class="footer-link">Community Forum</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Sunrise Meadows Homeowner Association. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for page navigation and mobile menu
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.add('hidden');
+            });
+
+            // Show the selected page
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.remove('hidden');
+            }
+
+            // Update active state for nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu after selection
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set default page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+        });
+    </script>
+
+</body>
+</html>
